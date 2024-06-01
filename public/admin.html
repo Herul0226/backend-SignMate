@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <h2>Admin Login</h2>
@@ -36,9 +37,7 @@
             })
             .then(response => response.text().then(message => {
                 if (response.ok) {
-                    // Jika login berhasil, tampilkan alert sukses
-                    alert(message);
-                    // Arahkan ke halaman dashboard setelah login berhasil
+                    // Jika login berhasil, arahkan ke halaman dashboard
                     window.location.href = '/dashboard.html';
                 } else {
                     // Jika login gagal, tampilkan alert gagal
