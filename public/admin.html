@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+</head>
+<body>
+    <h2>Admin Login</h2>
+    <form id="loginForm" action="/login" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Kirim data ke server untuk proses login
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`,
+            })
+            .then(response => response.text().then(message => {
+                if (response.ok) {
+                    // Jika login berhasil, tampilkan alert sukses
+                    alert(message);
+                    // Arahkan ke halaman dashboard setelah login berhasil
+                    window.location.href = '/dashboard.html';
+                } else {
+                    // Jika login gagal, tampilkan alert gagal
+                    alert(message);
+                }
+            }))
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
