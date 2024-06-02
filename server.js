@@ -38,11 +38,17 @@ app.post('/login', (req, res) => {
   if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
     res.redirect('/dashboard');
   } else {
+<<<<<<< HEAD:server.js
     // Jika login gagal, tambahkan pesan error ke flash dan redirect ke halaman login
     req.flash('error', 'Login Gagal. Username atau password salah.');
     res.redirect('/');
+=======
+    // Jika login gagal, render kembali halaman login dengan pesan alert
+    res.render('login', { alertMessage: 'Login Gagal. username atau password salah.' });
+>>>>>>> 82ed5c31b7ae5e06e734d8fd637b1c65d3db1ea4:app.js
   }
 });
+
 
 app.get('/dashboard', (req, res) => {
   res.render('dashboard');

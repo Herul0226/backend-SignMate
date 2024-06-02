@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
@@ -20,4 +21,30 @@
     </form>
   </div>
 </body>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Login</title>
+    <!-- Include CSS file -->
+    <link type="text/css" href="/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <h1>Admin Login SignMate</h1>
+      <% if (typeof alertMessage !== 'undefined') { %>
+      <div class="alert"><%= alertMessage %></div>
+      <% } %>
+      <form action="/login" method="post">
+        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
+>>>>>>> 82ed5c31b7ae5e06e734d8fd637b1c65d3db1ea4
 </html>
