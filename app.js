@@ -1,10 +1,12 @@
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 require('dotenv').config(); // Memuat variabel lingkungan dari .env
 
-const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Middleware untuk menyajikan file statis
 app.use(express.static('public'));
 
 // Menggunakan variabel lingkungan untuk kredensial admin
@@ -24,9 +26,11 @@ app.post('/login', (req, res) => {
   if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
     res.redirect('/dashboard');
   } else {
-    res.send('Login Failed. Invalid username or password.');
+    // Jika login gagal, render kembali halaman login dengan pesan alert
+    res.render('login', { alertMessage: 'Login Gagal. username atau password salah.' });
   }
 });
+
 
 app.get('/dashboard', (req, res) => {
   res.render('dashboard');
