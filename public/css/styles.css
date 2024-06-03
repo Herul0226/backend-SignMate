@@ -1,12 +1,12 @@
+/* Existing CSS */
 body {
-<<<<<<< HEAD
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .header {
-  background: #4caf50;
+  background: #4CAF50;
   color: white;
   padding: 15px;
   text-align: center;
@@ -44,20 +44,17 @@ table {
   border-collapse: collapse;
 }
 
-table,
-th,
-td {
+table, th, td {
   border: 1px solid black;
 }
 
-th,
-td {
+th, td {
   padding: 8px;
   text-align: left;
 }
 
 th {
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
 }
 
@@ -91,7 +88,7 @@ th {
 .login-container button {
   width: 100%;
   padding: 10px;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 50px;
@@ -111,64 +108,4 @@ th {
   border: 1px solid transparent;
   border-radius: 4px;
   text-align: center;
-=======
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
-}
-
-.login-wrapper form {
-  display: flex;
-  flex-direction: column;
-}
-.login-wrapper input[type="text"],
-.login-wrapper input[type="password"],
-.login-wrapper button {
-  width: 10%;
-}
-
-.login-wrapper {
-  background-color: #fff;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.login-wrapper h1 {
-  margin-bottom: 20px;
-}
-
-.login-wrapper input[type="text"],
-.login-wrapper input[type="password"] {
-  width: 100%;
-  max-width: 300px; 
-  padding: 10px;
-  margin: 10px auto; 
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.login-wrapper button {
-  width: 100%;
-  max-width: 300px; 
-  padding: 10px;
-  margin: 10px auto; 
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.login-wrapper button:hover {
-  background-color: #0056b3;
-}
-.alert {
-  color: red;
->>>>>>> 82ed5c31b7ae5e06e734d8fd637b1c65d3db1ea4
 }
